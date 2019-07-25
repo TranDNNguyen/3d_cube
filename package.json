@@ -1,6 +1,6 @@
 {
-  "name": "3d_project",
-  "version": "0.1.0",
+  "name": "3d_cube",
+  "version": "0",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
@@ -8,8 +8,7 @@
     "react-scripts": "3.0.1",
     "three": "^0.106.2",
     "three-dragcontrols": "^0.88.2",
-    "three-orbitcontrols": "^2.102.2",
-    "three-trackballcontrols": "^0.0.8"
+    "three-orbitcontrols": "^2.102.2"
   },
   "scripts": {
     "start": "react-scripts start",
