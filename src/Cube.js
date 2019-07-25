@@ -40,7 +40,11 @@ export class Cube extends Component {
       for (let col = 0; col > -3; col--) {
         for (let row = 0; row > -3; row--) {
           let cube = new THREE.Mesh(geometry, material);
-          cube.position.set(col + col*distance, row + row*distance, depth + depth*distance);
+          cube.position.set(
+            col + col*distance,
+            row + row*distance,
+            depth + depth*distance
+          );
           objects.push(cube);
           group.add(cube);
         }
@@ -49,11 +53,15 @@ export class Cube extends Component {
     }
 
     // add drag controls and event listeners
-    let dragControls = new DragControls( objects, this.camera, this.renderer.domElement );
-		dragControls.addEventListener('dragstart', function () {
+    let dragControls = new DragControls(
+      objects,
+      this.camera,
+      this.renderer.domElement
+    );
+		dragControls.addEventListener('dragstart', () => {
       this.rotation = false;
     } );
-		dragControls.addEventListener('dragend', function () {
+		dragControls.addEventListener('dragend', () => {
       this.rotation = true;
     });
 
@@ -63,7 +71,7 @@ export class Cube extends Component {
   animate = () => {
     requestAnimationFrame(this.animate);
 
-    if (this.rotation == false) {
+    if (this.rotation === false) {
       this.controls.enabled = false;
     } else {
       this.controls.enabled = true;
